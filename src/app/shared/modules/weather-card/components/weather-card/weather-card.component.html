@@ -1,0 +1,39 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      {{currentCityWeather.name}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{currentCityWeather.sys.country}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <i class="owf owf-5x" [class]=this.getIconName(currentCityWeather)></i>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <strong>Temperature:</strong>
+        {{currentCityWeather.main.temp | CelsiusTemperature }}
+      </mat-list-item>
+      <mat-list-item>
+        <strong>Clouds:</strong>
+        {{currentCityWeather.weather[0].description}}
+      </mat-list-item>
+      <mat-list-item>
+        <strong>Humidity:</strong>
+        {{currentCityWeather.main.humidity}}%
+      </mat-list-item>
+      <mat-list-item>
+        <strong>Pressure:</strong>
+        {{currentCityWeather.main.pressure}}
+      </mat-list-item>
+      <mat-list-item>
+        <strong>Wind direction:</strong>
+        {{currentCityWeather.wind.deg}}
+      </mat-list-item>
+      <mat-list-item>
+        <strong>Wind speed:</strong>
+        {{currentCityWeather.wind.speed}}m/s
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
